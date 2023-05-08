@@ -23,7 +23,7 @@ The model was trained using the Adam optimizer and a batch size of 32. The train
 
 # Evaluation
 
-The model was evaluated on a separate test set, which was not used during training or validation. Evaluation metrics include accuracy, precision, recall, and F1 score. The model's performance was compared to existing models for yoga pose classification, and demonstrated strong performance across a range of metrics.
+The model was evaluated on a separate test set, which was not used during training or validation. The model's performance was compared to existing models for yoga pose classification, and demonstrated strong performance across a range of metrics.
 
 # Usage
 
