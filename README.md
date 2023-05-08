@@ -8,6 +8,11 @@ This repository contains the code for a deep learning model that classifies 107 
 
 The dataset used to train and test this model consists of a collection of images of individuals performing 107 different yoga poses. The images were carefully curated and preprocessed to ensure accuracy and consistency, and were split into training and validation sets for model training.
 
+
+![download](https://user-images.githubusercontent.com/102585626/236802689-6aa1ffe4-97c0-4e63-b4f5-378baa8f69a9.png)
+(THE IMAGES IN THE DATASET)
+
+
 # Model Architecture
 
 The model is based on the DenseNet architecture, which has shown strong performance in a variety of computer vision tasks. The model uses a pre-trained DenseNet model as a base, and adds several additional layers on top for fine-tuning. The model includes dropout layers for regularization and to prevent overfitting, and uses a softmax activation function in the final layer for multiclass classification.
