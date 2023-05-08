@@ -44,7 +44,10 @@ These keypoints are used to classify the image into one of 107 possible yoga pos
 
 ![download](https://user-images.githubusercontent.com/102585626/236807878-a7e55e04-f524-42ad-9101-f434af2620a2.png)
 
+# Training
 
+The training progress of the model can be visualized using the training and validation loss and accuracy metrics. In the provided example, the model was trained for 100 epochs, and after 18 epochs, the training loss was 1.3583 and the training accuracy was 0.7266. The validation loss was 1.9982 and the validation accuracy was 0.6230 at this point.
+![download](https://user-images.githubusercontent.com/102585626/236808805-f535414b-360a-4c4c-b2b3-8f174d16d057.png)
 
 # Some potential areas for future work on this project include:
 
