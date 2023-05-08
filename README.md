@@ -2,33 +2,49 @@
 
 # Yoga Pose Image Classification using DenseNet
 
-This repository contains the code for a deep learning model that classifies 107 different yoga poses based on input images. The model is based on the DenseNet architecture, with a few additional layers added on top for fine-tuning.
+This project is an image classification model for yoga poses based on transfer learning techniques. The algorithm uses a pre-trained model to identify the coordinates of 17 keypoints in the image and produces new features based on the distance between the keypoints and their relative positions. A densely connected neural network is then trained on keypoint coordinates and position features to classify the image into one of 107 possible yoga poses.
+
+# Pre-trained Models
+
+The algorithm uses two pre-trained models provided by Google's TensorFlow Hub:
+
+https://tfhub.dev/google/movenet/singlepose/thunder/3 - a larger model for higher accuracy
+https://tfhub.dev/google/movenet/singlepose/lightning/3  - a smaller model for faster inference
+Both models take an input of a frame of video or an image represented as an int32 tensor of shape:
+
+256 x 256 x 3 for the larger model ("Thunder")
+192 x 192 x 3 for the smaller model ("Lightning")
+The channels order is RGB with values in the range of 0-255. The output is a float32 tensor of shape (1, 1, 17, 3). The first two channels of the last dimension represent the y and x coordinates normalized to the image frame, i.e., range in (0.0, 1.0) of the 17 keypoints 
+
+# Densely Connected Neural Network
+The algorithm uses a densely connected neural network with three hidden layers to classify the image into one of the 107 possible yoga poses. The model architecture is defined by the get_model function in the code. The n_features parameter is the number of input features, which is equal to 17 for the keypoint coordinates and 136 for the position features. The n_classes parameter is the number of output classes, which is 107. The dense_neurons parameter is a list of the number of neurons in each hidden layer, which is [256, 256, 128] in this case.
 
 # Dataset
 
-The dataset used to train and test this model consists of a collection of images of individuals performing 107 different yoga poses. The images were carefully curated and preprocessed to ensure accuracy and consistency, and were split into training and validation sets for model training.
+The dataset used to train and test this model consists of a collection of images of individuals performing 107 different yoga poses. The 17 keypoints identified by the algorithm are:
 
-![__results___10_0](https://user-images.githubusercontent.com/102585626/236804777-92cdc5da-7557-4e91-9c85-22cb45417122.png)
+-> nose
+-> left eye
+-> right eye
+-> left ear
+-> right ear
+-> left shoulder
+-> right shoulder
+-> left elbow
+-> right elbow
+-> left wrist
+-> right wrist
+-> left hip
+-> right hip
+-> left knee
+-> right knee
+-> left ankle
+-> right ankle
+These keypoints are used to classify the image into one of 107 possible yoga poses
+
+![download](https://user-images.githubusercontent.com/102585626/236807878-a7e55e04-f524-42ad-9101-f434af2620a2.png)
 
 
-(THE IMAGES IN THE DATASET)
-
-
-# Model Architecture
-
-The model is based on the DenseNet architecture, which has shown strong performance in a variety of computer vision tasks. The model uses a pre-trained DenseNet model as a base, and adds several additional layers on top for fine-tuning. The model includes dropout layers for regularization and to prevent overfitting, and uses a softmax activation function in the final layer for multiclass classification.
-
-# Training
-
-The model was trained using the Adam optimizer and a batch size of 32. The training process involved multiple epochs of training on the training set, with validation performed after each epoch to monitor performance and prevent overfitting. The model was fine-tuned using transfer learning techniques, with the pre-trained DenseNet model serving as a starting point for training.
-
-# Evaluation
-
-The model was evaluated on a separate test set, which was not used during training or validation. The model's performance was compared to existing models for yoga pose classification, and demonstrated strong performance across a range of metrics.
-
-# Usage
-
-To use this model for yoga pose classification, simply clone this repository and run the yoga_pose_classifier.py file. The file takes an input image and returns a predicted yoga pose label.
 
 # Some potential areas for future work on this project include:
 
