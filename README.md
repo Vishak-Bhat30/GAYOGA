@@ -8,8 +8,9 @@ This repository contains the code for a deep learning model that classifies 107 
 
 The dataset used to train and test this model consists of a collection of images of individuals performing 107 different yoga poses. The images were carefully curated and preprocessed to ensure accuracy and consistency, and were split into training and validation sets for model training.
 
+![__results___10_0](https://user-images.githubusercontent.com/102585626/236804777-92cdc5da-7557-4e91-9c85-22cb45417122.png)
 
-![download](https://user-images.githubusercontent.com/102585626/236802689-6aa1ffe4-97c0-4e63-b4f5-378baa8f69a9.png)
+
 (THE IMAGES IN THE DATASET)
 
 
